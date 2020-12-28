@@ -1,9 +1,15 @@
 """Project Euler problem 3"""
-NUMBER = 600851475143
-COUNT = 2
-while COUNT ** 2 < NUMBER:
-    if NUMBER % COUNT == 0:
-        NUMBER //= COUNT
-    else:
-        COUNT += 1
-print(NUMBER)
+
+
+def calculate(number):
+    """Returns the largest prime factor of the given number"""
+    count = 2
+    while count ** 2 < number:
+        if number % count == 0:
+            number //= count
+        else:
+            count += 1
+    return number
+
+
+print(calculate(600851475143))
