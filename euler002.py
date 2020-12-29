@@ -3,17 +3,17 @@
 
 def calculate(not_to_exceed):
     """Returns the sum of the even-valued terms in the Fibonacci sequence
-    whose values do not exceed the given number"""
+    whose values do not exceed the specified number"""
+    answer = 0
     term_one = 1
     term_two = 2
-    total = 0
     while term_two < not_to_exceed:
         if not term_two % 2:
-            total += term_two
+            answer += term_two
         next_term = term_one + term_two
         term_one = term_two
         term_two = next_term
-    return total
+    return answer
 
 
 print(calculate(4000000))

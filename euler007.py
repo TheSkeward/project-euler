@@ -1,20 +1,34 @@
 """Project Euler problem 7"""
 
 
-def calculate(last_prime):
-    """finds the last_primeth number"""
-    primes = []
+def is_prime(number):
+    """Returns True if the specified number is prime"""
+    if number <= 1:
+        return False
     count = 2
+    while count ** 2 <= number:
+        if number % count == 0:
+            return False
+        count += 1
+    return True
+
+
+def calculate(last_prime):
+    """Returns the last_prime-th prime"""
+    primes = []
+    count = 0
     while len(primes) < last_prime:
         match = False
-        for prime in primes:
-            if count % prime == 0:
-                match = True
-                break
-        if not match:
-            primes.append(count)
+        if is_prime(count):
+            for prime in primes:
+                if count % prime == 0:
+                    match = True
+                    break
+            if not match:
+                primes.append(count)
         count += 1
-    return primes[-1]
+    answer = primes[-1]
+    return answer
 
 
 print(calculate(10001))

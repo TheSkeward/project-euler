@@ -1,19 +1,20 @@
 """Project Euler problem 9"""
 
 
-def calculate(abc_sum):
-    """Finds a Pythagorean triplet for which a + b + c == abc_sum and returns the product a*b*c"""
-    for a in range(1, abc_sum):
-        if a > abc_sum:
+def calculate(perimeter):
+    """Returns the product a*b*c of a Pythagorean triplet for which a + b + c == perimeter"""
+    for a in range(1, perimeter):
+        if a > perimeter:
             break
-        for b in range(1, abc_sum):
-            if a + b > abc_sum:
+        for b in range(1, perimeter):
+            if a + b > perimeter:
                 break
-            for c in range(1, abc_sum):
-                if a + b + c > abc_sum:
+            for c in range(1, perimeter):
+                if a + b + c > perimeter:
                     break
-                if a + b + c == abc_sum and a ** 2 + b ** 2 == c ** 2:
-                    return a * b * c
+                if a + b + c == perimeter and a ** 2 + b ** 2 == c ** 2:
+                    answer = a * b * c
+                    return answer
 
 
 print(calculate(1000))

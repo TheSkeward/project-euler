@@ -1,30 +1,32 @@
 """Project Euler problem 5"""
 from collections import Counter
+import fractions
 
 
-def get_prime_factors(number):
-    count = 2
-    factors = []
-    while count ** 2 <= number:
-        if number % count == 0:
-            factors.append(count)
-            number //= count
-        else:
-            count += 1
-    factors.append(number)
-    return [1] + factors
+def calculate(end_number):
+    """Returns the smallest positive number that is evenly divisible
+    by all of the numbers from 1 to the specified number"""
+    factors_by_number = []
+    for divisor in range(2, end_number + 1):
+        count = 2
+        factors = []
+        while count ** 2 <= divisor:
+            if divisor % count == 0:
+                factors.append(count)
+                divisor = fractions.Fraction(divisor, count)
+            else:
+                count += 1
+        factors.append(divisor)
+        factors_by_number.append(Counter(factors))
+    all_factors = {}
+    for counter in factors_by_number:
+        for key in counter:
+            if key not in all_factors or all_factors[key] < counter[key]:
+                all_factors[key] = counter[key]
+    answer = 1
+    for key, value in all_factors.items():
+        answer *= key ** value
+    return answer
 
 
-NUMBER = 20
-FACTORS_BY_NUMBER = []
-for divisor in range(2, NUMBER + 1):
-    FACTORS_BY_NUMBER.append(Counter(get_prime_factors(divisor)))
-ALL_FACTORS = {}
-for counter in FACTORS_BY_NUMBER:
-    for key in counter:
-        if key not in ALL_FACTORS or ALL_FACTORS[key] < counter[key]:
-            ALL_FACTORS[key] = counter[key]
-SMALLEST_MULTIPLE = 1
-for key, value in ALL_FACTORS.items():
-    SMALLEST_MULTIPLE *= key ** value
-print(SMALLEST_MULTIPLE)
+print(calculate(20))
