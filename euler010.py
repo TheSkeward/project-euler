@@ -14,12 +14,13 @@ def is_prime(number):
 
 
 def calculate(below):
-    """Returns the sum of the primes below the provided number"""
+    """Returns the sum of the primes below the specified number"""
     primes = []
     for potential in range(below):
         if is_prime(potential):
             primes.append(potential)
-    return sum(primes)
+    answer = sum(primes)
+    return answer
 
 
 print(calculate(2000000))
