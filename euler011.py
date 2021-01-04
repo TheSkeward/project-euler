@@ -41,7 +41,7 @@ def calculate(grid):
                                     (i, len(grid) - i - 1 - row_index)
                                     for i in range(len(grid) - row_index)
                                 ][column_index:end_digit]
-                                if 0 <= len(grid) - row - 1 < len(GRID)
+                                if 0 <= len(grid) - row - 1 < len(grid)
                                 and 0 <= row + row_index < len(grid)
                             ]
                         ),
