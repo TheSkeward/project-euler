@@ -13,7 +13,6 @@ def calculate(over):
     """Returns the value of the first triangle number to have
     over the specified number of divisors"""
     triangle = 0
-    answer = 0
     count = sum(range(triangle))
     while True:
         if num_divisors(count) > over:
