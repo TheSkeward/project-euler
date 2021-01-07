@@ -12,4 +12,5 @@ def calculate(nth_number):
     return answer
 
 
-print(calculate(100))
+if __name__ == "__main__":
+    print(calculate(100))

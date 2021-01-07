@@ -7,4 +7,5 @@ def calculate(power):
     return answer
 
 
-print(calculate(1000))
+if __name__ == "__main__":
+    print(calculate(1000))

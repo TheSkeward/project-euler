@@ -31,4 +31,5 @@ def calculate(last_prime):
     return answer
 
 
-print(calculate(10001))
+if __name__ == "__main__":
+    print(calculate(10001))

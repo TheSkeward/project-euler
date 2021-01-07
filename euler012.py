@@ -23,4 +23,5 @@ def calculate(over):
         count = sum(range(triangle))
 
 
-print(calculate(500))
+if __name__ == "__main__":
+    print(calculate(500))

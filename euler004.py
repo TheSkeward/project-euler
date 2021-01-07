@@ -13,4 +13,5 @@ def calculate(digits):
     return answer
 
 
-print(calculate(3))
+if __name__ == "__main__":
+    print(calculate(3))

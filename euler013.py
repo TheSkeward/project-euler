@@ -2,6 +2,7 @@
 
 
 def calculate(numbers):
+    """Returns the first ten digits of the sum of the specified list of numbers"""
     answer = str(sum(numbers))[:10]
     return answer
 
@@ -108,5 +109,5 @@ NUMBERS = [
     20849603980134001723930671666823555245252804609722,
     53503534226472524250874054075591789781264330331690,
 ]
-
-print(calculate(NUMBERS))
+if __name__ == "__main__":
+    print(calculate(NUMBERS))

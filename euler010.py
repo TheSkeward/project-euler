@@ -23,4 +23,5 @@ def calculate(below):
     return answer
 
 
-print(calculate(2000000))
+if __name__ == "__main__":
+    print(calculate(2000000))

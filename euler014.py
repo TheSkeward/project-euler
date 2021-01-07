@@ -21,4 +21,5 @@ def calculate(under):
     return answer
 
 
-print(calculate(1000000))
+if __name__ == "__main__":
+    print(calculate(1000000))

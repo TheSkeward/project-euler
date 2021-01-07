@@ -29,4 +29,5 @@ def calculate(end_number):
     return answer
 
 
-print(calculate(20))
+if __name__ == "__main__":
+    print(calculate(20))
