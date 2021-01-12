@@ -6,10 +6,10 @@ def letter_count(num):
     assert 0 < num <= 1000
     num = str(num)
     acc = 0
-    if len(str(num)) > 3:
+    if len(num) > 3:
         acc += len("one thousand".replace(" ", ""))
         num = "0"
-    if len(str(num)) > 2:
+    if len(num) > 2:
         acc += (
             len("hundred and".replace(" ", "")) if int(num[-2:]) > 0 else len("hundred")
         )
