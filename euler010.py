@@ -1,13 +1,15 @@
 """Project Euler problem 10"""
 
 
-def is_prime(number):
-    """Returns True if the specified number is prime"""
-    if number <= 1:
+def is_prime(num):
+    """Returns True if num is prime"""
+    if num <= 1:
         return False
+    if num <= 3:
+        return True
     count = 2
-    while count ** 2 <= number:
-        if number % count == 0:
+    while count ** 2 <= num:
+        if num % count == 0:
             return False
         count += 1
     return True
